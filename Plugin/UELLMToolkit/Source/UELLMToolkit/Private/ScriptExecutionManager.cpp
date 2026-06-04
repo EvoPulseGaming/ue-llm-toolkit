@@ -58,11 +58,11 @@ FScriptExecutionResult FScriptExecutionManager::ExecuteScript(
 		FinalDescription = ScriptHeader::ParseDescription(ScriptContent);
 	}
 
-	// Show permission dialog
-	if (!ShowPermissionDialog(ScriptContent, Type, FinalDescription))
-	{
-		return FScriptExecutionResult::Error(TEXT("Script execution denied by user"));
-	}
+	//// Show permission dialog
+	//if (!ShowPermissionDialog(ScriptContent, Type, FinalDescription))
+	//{
+	//	return FScriptExecutionResult::Error(TEXT("Script execution denied by user"));
+	//}
 
 	// Execute based on type
 	FScriptExecutionResult Result;
