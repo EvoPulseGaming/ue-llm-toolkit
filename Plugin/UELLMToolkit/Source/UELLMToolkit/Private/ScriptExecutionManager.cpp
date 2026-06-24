@@ -769,6 +769,7 @@ FString FScriptExecutionManager::GetCppScriptDirectory() const
 
 FString FScriptExecutionManager::GetContentScriptDirectory() const
 {
-	// Content/UnrealClaude/Scripts/
-	return FPaths::Combine(FPaths::ProjectContentDir(), TEXT("UnrealClaude"), TEXT("Scripts"));
+	// Script/UnrealClaude/ -- a dedicated dev-script folder. These Python/diagnostic scripts are NOT
+	// game content, so keep them out of Content/ (avoids content-browser clutter + cook/staging).
+	return FPaths::Combine(FPaths::ProjectDir(), TEXT("Script"), TEXT("UnrealClaude"));
 }

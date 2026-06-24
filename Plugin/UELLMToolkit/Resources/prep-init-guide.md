@@ -2,7 +2,7 @@
 
 This document is the full procedure for scanning a UE project and generating project-specific domain files. **Read this file in full before starting. Do not skim.**
 
-You will use the plugin HTTP API (via `ue-tool.sh` or `curl localhost:3000`) to explore the project, then write 4 domain files to `domains/` in the project root. The goal is token-efficient summaries — not raw dumps.
+You will use the plugin HTTP API (via `ue-tool.sh` or `curl localhost:3000`) to explore the project, then write 4 domain files to `Docs/UnrealClaude/` (under the project's `Docs/`). The goal is token-efficient summaries — not raw dumps.
 
 **Critical rule**: Before calling any tool for the first time during this procedure, run `ue-tool.sh help <tool>` to verify exact parameter names and available operations. Parameter names and operations vary across plugin versions — do not assume. The examples below use common names but yours may differ.
 
@@ -112,7 +112,7 @@ Also read 2-3 key `.h` files if they exist:
 
 ## Phase 3: Write Domain Files
 
-Write 4 files to `domains/` in the project root (sibling to `Content/`, `Source/`, etc.). Create the `domains/` directory if it doesn't exist.
+Write 4 files to `Docs/UnrealClaude/` (under the project's `Docs/` folder). Create the `Docs/UnrealClaude/` directory if it doesn't exist.
 
 **Token budget per file:**
 - Target: 500-1500 tokens
@@ -289,10 +289,10 @@ Before writing the files, verify:
 - [ ] You inspected the player AnimBP state machines (if found)
 - [ ] Each output file is under ~2000 tokens
 - [ ] Large inventories are summarized, not listed line-by-line
-- [ ] The `domains/` directory exists (create if needed)
+- [ ] The `Docs/UnrealClaude/` directory exists (create if needed)
 
 After writing, tell the user:
 ```
-Domain files written to domains/. Run `prep code` (or blueprints, assets, debug) to load them.
+Domain files written to Docs/UnrealClaude/. Run `prep code` (or blueprints, assets, debug) to load them.
 Re-run `prep one time init` after major project changes to refresh.
 ```
